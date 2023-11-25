@@ -5,7 +5,7 @@ function App() {
   const [buttonColor, setButtonColor] = useState('red');
   const [disabled, setDisabled] = useState(false);
   const newButtonColor = buttonColor === 'red' ? 'blue' : 'red';
-  const className = disabled ? 'grey' : buttonColor;
+  const className = disabled ? 'gray' : buttonColor;
 
   return (
     <div>

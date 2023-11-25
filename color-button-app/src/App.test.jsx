@@ -39,18 +39,18 @@ describe('color button app', () => {
     expect(buttonElement).toBeEnabled();
     expect(checkBoxElement).not.toBeChecked();
   });
-  test('チェックボックスがチェックされていたらボタンの色が変わらないテスト', () => {
+  test('チェックボックスがチェックされていたらボタンの色がgrayになるテスト', () => {
     render(<App />);
     const buttonElement = screen.getByRole('button')
     const checkBoxElement = screen.getByRole('checkbox')
-    expect(buttonElement).toHaveTextContent("blue")
+    expect(buttonElement).toHaveClass("red")
     expect(checkBoxElement).not.toBeChecked();
     // チェックボックスを押下にボタンを無効化
     fireEvent.click(checkBoxElement)
     fireEvent.click(buttonElement)
     expect(checkBoxElement).toBeChecked();
     expect(buttonElement).toBeDisabled();
-    expect(buttonElement).toHaveTextContent("blue")
+    expect(buttonElement).toHaveClass("gray")
   });
 });
 
