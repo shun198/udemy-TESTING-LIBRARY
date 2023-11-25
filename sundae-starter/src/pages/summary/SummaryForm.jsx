@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Popover from "react-bootstrap/Popover";
 
 export default function SummaryForm() {
   const [tcChecked, setTcChecked] = useState(false);
 
+  const popover = (
+    <Popover id="popover-basic">
+      <Popover.Body>一度購入したものは返金できません</Popover.Body>
+    </Popover>
+  );
+
   const checkboxLabel = (
     <span>
-      I agree to
-      <span style={{ color: "blue" }}> Terms and Conditions</span>
+      <OverlayTrigger placement="right" overlay={popover}>
+        <span style={{ color: "blue" }}>利用規約</span>
+      </OverlayTrigger>
+      に同意します
     </span>
   );
 
