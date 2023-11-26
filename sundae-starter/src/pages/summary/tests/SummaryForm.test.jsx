@@ -5,7 +5,8 @@ import SummaryForm from '../SummaryForm';
 
 describe('pages/summary/SummaryForm.jsx', () => {
   test('利用規約に同意するとボタンが有効化される', async() => {
-    const user = userEvent.setup();
+    const user = 
+    userEvent.setup();
     render(<SummaryForm />);
     const button = screen.getByRole('button');
     const checkBox = screen.getByRole('checkbox');
